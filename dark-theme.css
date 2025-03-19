@@ -1,0 +1,46 @@
+body {
+    background-color: #121212;    /* Dark background */
+    color: #e0e0e0;              /* Light gray text for better readability */
+}
+
+header, footer {
+    background-color: #1f1f1f;    /* Slightly lighter than body for contrast */
+    color: #ffffff;               /* White text */
+}
+
+button {
+    background-color: #3700B3;    /* Purple-ish button for accent */
+    color: #ffffff;               /* White text */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Add hover state for buttons */
+button:hover {
+    background-color: #4400d6;    /* Slightly lighter purple on hover */
+}
+
+/* Links styling */
+a {
+    color: #BB86FC;               /* Light purple for links */
+}
+
+a:hover {
+    color: #d4b2ff;               /* Lighter purple on hover */
+}
+
+/* Optional: style for input elements */
+input, textarea, select {
+    background-color: #2d2d2d;    /* Slightly lighter than body */
+    color: #e0e0e0;              /* Light gray text */
+    border: 1px solid #404040;    /* Subtle border */
+    padding: 8px;
+}
+
+/* Optional: style for code or pre blocks */
+code, pre {
+    background-color: #1f1f1f;    /* Slightly lighter than body */
+    color: #e0e0e0;              /* Light gray text */
+    padding: 8px;
+}

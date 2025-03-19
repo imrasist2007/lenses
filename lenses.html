@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Виды объективов</title>
+    <link id="theme-style" rel="stylesheet" href="light-theme.css">
+</head>
+<body>
+    <header>
+        <h1>Виды объективов</h1>
+        <button id="theme-toggle">Темная тема</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="lenses.html">Виды объективов</a></li>
+                <li><a href="configurator.html">Конфигуратор</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Объективы для портрета</h2>
+            <p>Портретные объективы имеют фиксированное фокусное расстояние (например, 50 мм или 85 мм) и обеспечивают красивое размытие фона (боке).</p>
+            <img src="images/portrait.jpg" alt="Портретный объектив">
+        </section>
+        <section>
+            <h2>Объективы для пейзажа</h2>
+            <p>Широкоугольные объективы (например, 16-35 мм) идеально подходят для съемки пейзажей, так как они захватывают больше пространства.</p>
+            <img src="images/landscape.jpg" alt="Пейзажный объектив">
+        </section>
+        <section>
+            <h2>Объективы для архитектуры</h2>
+            <p>Тилт-шифт объективы используются для съемки архитектуры, чтобы избежать искажений.</p>
+            <img src="images/architecture.jpg" alt="Архитектурный объектив">
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 romarp</p>
+    </footer>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeStyle = document.getElementById('theme-style');
+
+        themeToggle.addEventListener('click', () => {
+            if (themeStyle.getAttribute('href') === 'light-theme.css') {
+                themeStyle.setAttribute('href', 'dark-theme.css');
+                themeToggle.textContent = 'Светлая тема';
+            } else {
+                themeStyle.setAttribute('href', 'light-theme.css');
+                themeToggle.textContent = 'Темная тема';
+            }
+        });
+    </script>
+</body>
+</html>

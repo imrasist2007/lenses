@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конфигуратор объектива</title>
+    <link id="theme-style" rel="stylesheet" href="light-theme.css">
+</head>
+<body>
+    <header>
+        <h1>Конфигуратор объектива</h1>
+        <button id="theme-toggle">Темная тема</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="lenses.html">Виды объективов</a></li>
+                <li><a href="configurator.html">Конфигуратор</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Выберите параметры</h2>
+            <form id="lens-configurator">
+                <label for="bayonet">Байонет:</label>
+                <select id="bayonet" name="bayonet">
+                    <option value="nikon">Nikon F</option>
+                    <option value="canon">Canon EF</option>
+                    <option value="fuji">Fujifilm FX</option>
+                </select>
+                <label for="theme">Тематика съемки:</label>
+                <select id="theme" name="theme">
+                    <option value="portrait">Портрет</option>
+                    <option value="landscape">Пейзаж</option>
+                    <option value="architecture">Архитектура</option>
+                </select>
+                <button type="button" onclick="recommendLens()">Подобрать объектив</button>
+            </form>
+            <div id="result"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 romarp</p>
+    </footer>
+    <script>
+        const lensRecommendations = {
+            nikon: {
+                portrait: "Nikon NIKKOR Z 85mm f/1.8 S",
+                landscape: "Nikon NIKKOR Z 14-30mm f/4 S",
+                architecture: "Nikon PC NIKKOR 19mm f/4E ED"
+            },
+            canon: {
+                portrait: "Canon EF 85mm f/1.4L IS USM",
+                landscape: "Canon EF 16-35mm f/2.8L III USM",
+                architecture: "Canon TS-E 24mm f/3.5L II"
+            },
+            fuji: {
+                portrait: "Fujinon XF 56mm f/1.2 R",
+                landscape: "Fujinon XF 10-24mm f/4 R OIS",
+                architecture: "Fujinon GF 45mm f/2.8 R WR"
+            }
+        };
+
+        function recommendLens() {
+            const bayonet = document.getElementById('bayonet').value;
+            const theme = document.getElementById('theme').value;
+            const result = document.getElementById('result');
+            result.textContent = `Рекомендуемый объектив: ${lensRecommendations[bayonet][theme]}`;
+        }
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeStyle = document.getElementById('theme-style');
+
+        themeToggle.addEventListener('click', () => {
+            if (themeStyle.getAttribute('href') === 'light-theme.css') {
+                themeStyle.setAttribute('href', 'dark-theme.css');
+                themeToggle.textContent = 'Светлая тема';
+            } else {
+                themeStyle.setAttribute('href', 'light-theme.css');
+                themeToggle.textContent = 'Темная тема';
+            }
+        });
+    </script>
+</body>
+</html>
